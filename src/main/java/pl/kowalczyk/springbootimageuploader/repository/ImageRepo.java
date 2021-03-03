@@ -1,9 +1,10 @@
 package pl.kowalczyk.springbootimageuploader.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import pl.kowalczyk.springbootimageuploader.model.AppUser;
-import pl.kowalczyk.springbootimageuploader.model.Image;
+import org.springframework.stereotype.Repository;
+import pl.kowalczyk.springbootimageuploader.model.ImageModel;
 
-public interface ImageRepo extends JpaRepository<Image, Long> {
+@Repository
+public interface ImageRepo extends JpaRepository<ImageModel, Long> {
 
 }

@@ -9,10 +9,6 @@ import com.vaadin.flow.router.Route;
 import org.springframework.beans.factory.annotation.Autowired;
 import pl.kowalczyk.springbootimageuploader.ImageUpader;
 
-import java.awt.*;
-import java.io.IOException;
-import java.net.URI;
-
 @Route("upload")
 public class UploadGui extends VerticalLayout {
     private ImageUpader imageUpader;
@@ -27,7 +23,7 @@ public class UploadGui extends VerticalLayout {
         TextField textField = new TextField();
         Button btnUpload = new Button("upload");
         btnUpload.addClickListener(buttonClickEvent -> {
-            String imageUrl = imageUpader.uploadFile(textField.getValue());
+            String imageUrl = imageUpader.uploadFileAndSaveToDb(textField.getValue());
             Image image = new Image(imageUrl, "no picture");
             label.setText("Success. URL to photo"+imageUrl);
             add(label);

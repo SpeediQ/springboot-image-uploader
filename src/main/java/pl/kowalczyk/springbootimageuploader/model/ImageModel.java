@@ -6,18 +6,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Image {
+public class ImageModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String imageAdress;
 
 
-    public Image(String imageUrl){
+    public ImageModel(String imageUrl){
         this.imageAdress = imageUrl;
     }
 
-    public Image() {
+    public ImageModel() {
     }
 
     public Long getId() {
