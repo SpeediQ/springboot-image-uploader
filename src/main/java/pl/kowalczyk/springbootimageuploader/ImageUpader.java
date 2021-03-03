@@ -33,7 +33,7 @@ public class ImageUpader {
         } catch (IOException e) {
             //todo
         }
-        return "";
+        return uploadResult.get("url").toString();
 
     }
 
