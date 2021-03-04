@@ -13,6 +13,7 @@ import pl.kowalczyk.springbootimageuploader.ImageUpader;
 public class UploadGui extends VerticalLayout {
     private ImageUpader imageUpader;
 
+
     @Autowired
     public UploadGui(ImageUpader imageUpader) {
         this.imageUpader = imageUpader;

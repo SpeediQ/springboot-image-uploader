@@ -20,6 +20,8 @@ public class GalleryGui extends VerticalLayout {
         List<ImageModel> allPhotos = imageRepo.findAll();
         allPhotos.stream().forEach(e-> {
             Image image = new Image(e.getImageAdress(), "no image");
+
+            image.setWidth("60%");
             add(image);
         });
 

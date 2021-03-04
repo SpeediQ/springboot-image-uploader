@@ -37,7 +37,6 @@ public class ImageUpader {
 
         try {
             uploadResult = cloudinary.uploader().upload(file, ObjectUtils.emptyMap());
-            imageRepo.save(new ImageModel(uploadResult.get("url").toString()));
         } catch (IOException e) {
             //todo
         }
