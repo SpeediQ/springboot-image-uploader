@@ -28,17 +28,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
-
         auth.userDetailsService(userDetailsService);
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/test1").authenticated()
-                .antMatchers("/test2").hasAnyRole("USER", "ADMIN")
-                .antMatchers("/upload").permitAll()
+                .antMatchers("/gallery").hasAnyRole("USER", "ADMIN")
+                .antMatchers("/upload").hasRole("ADMIN")
                 .and()
                 .formLogin().permitAll()
                 .and()

@@ -10,16 +10,19 @@ public class ImageModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String imageAdress;
+    private String imageAddress;
+
 
 
 
     public ImageModel(String imageUrl){
-        this.imageAdress = imageUrl;
+        this.imageAddress = imageUrl;
     }
 
     public ImageModel() {
     }
+
+
 
     public Long getId() {
         return id;
@@ -29,11 +32,11 @@ public class ImageModel {
         this.id = id;
     }
 
-    public String getImageAdress() {
-        return imageAdress;
+    public String getImageAddress() {
+        return imageAddress;
     }
 
-    public void setImageAdress(String imageAdress) {
-        this.imageAdress = imageAdress;
+    public void setImageAddress(String imageAdress) {
+        this.imageAddress = imageAdress;
     }
 }
