@@ -16,6 +16,7 @@ import java.util.Map;
 public class ImageUpader {
     private Cloudinary cloudinary;
     private ImageRepo imageRepo;
+    Map uploadResult;
 
     private static final String cloudName = System.getenv("CLOUD_NAME");
     private static final String apiKey = System.getenv("API_KEY");
@@ -30,9 +31,9 @@ public class ImageUpader {
                 "api_secret", api_secret));
     }
 
-    public String uploadFileAndSaveToDb(String path) {
+    public String uploadFile(String path) {
         File file = new File(path);
-        Map uploadResult = null;
+        uploadResult = null;
 
         try {
             uploadResult = cloudinary.uploader().upload(file, ObjectUtils.emptyMap());
@@ -42,6 +43,10 @@ public class ImageUpader {
         }
         return uploadResult.get("url").toString();
 
+    }
+
+    public void saveToDb(){
+        imageRepo.save(new ImageModel(uploadResult.get("url").toString()));
     }
 
 }

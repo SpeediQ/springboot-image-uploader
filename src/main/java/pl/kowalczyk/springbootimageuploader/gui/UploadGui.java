@@ -23,7 +23,8 @@ public class UploadGui extends VerticalLayout {
         TextField textField = new TextField();
         Button btnUpload = new Button("upload");
         btnUpload.addClickListener(buttonClickEvent -> {
-            String imageUrl = imageUpader.uploadFileAndSaveToDb(textField.getValue());
+            String imageUrl = imageUpader.uploadFile(textField.getValue());
+            imageUpader.saveToDb();
             Image image = new Image(imageUrl, "no picture");
             label.setText("Success. URL to photo"+imageUrl);
             add(label);
