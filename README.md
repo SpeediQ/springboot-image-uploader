@@ -17,6 +17,6 @@ The application enables:<br>
   <img src="http://res.cloudinary.com/ddobwshjj/image/upload/v1618251692/yj2jzndzl9znjeygxm6i.jpg" width="600" title="gallery">
 </p>
 
-http://res.cloudinary.com/ddobwshjj/image/upload/v1618251692/yj2jzndzl9znjeygxm6i.jpg
+
   
   
